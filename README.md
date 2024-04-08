@@ -11,5 +11,4 @@
 - com isso ira aparecer os cenarios de testes
 
 ### Pipeline
-- Esse projeto contem uma pipeline que pode ser executada dentro da aba
- ( Actions )
+- Esse projeto contem uma pipeline que pode ser executada dentro do Github na aba ( Actions )
