@@ -1,14 +1,33 @@
+# Começando:
+    Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local 
+
+
 # Pré-requisitos de instalação:
-- NodeJS versão estável (14 ou superior) → https://nodejs.org/en/download/
-- IDE → https://code.visualstudio.com/download
+    NodeJS versão estável (18 ou superior) → https://nodejs.org/en/download/
+    IDE → https://code.visualstudio.com/download
 
-# Configurações necessárias para o seu projeto:
-- Clone o projeto e crie uma pasta com o nome do seu projeto e baixe o codigo na pasta, abra o VScode e abra sua pasta, depois execute no terminal o comando: npm install
-- esse comando no terminal fara a instalação do Cypress e suas dependencias
+# Clonar projeto
+    Crie uma pasta clone o codigo do projeto e cole dentro da pasta, depois abra a pasta no VSCode
 
-### Para executar os testes pela interface do cypress:
-- no terminal dentro do VScode execute o seguinte comando: npm test
-- com isso ira aparecer os cenarios de testes
+# Link do projeto
+    https://github.com/romulo-hub/Projeto-Front-Cucumber.git
+    Caso use o gitbash execute o comando ( git clone ) e o link do projeto
+    
+# Modo de execução    
+    Execute no teriminal o comando: npm install
+    Esse comando no terminal fara a instalação do Cypress e suas dependencias
 
-### Pipeline
-- Esse projeto contem uma pipeline que pode ser executada dentro do Github na aba ( Actions )
+## Para abrir a interface do Cypress 
+    npm test
+ 
+## Para executar os testes do projeto
+    O teste se encontra na pasta de ( Integration )
+
+## Cenarios de testes em Cucumber
+    Os cenarios de testes foram escritos em formato do Cucumber na linguaguem do Gherkin que é uma forma
+    de documentar o cenario e o passo a passo de como testar e de qual sera o resultado esperado do teste
+    Essas informações do passo a passo que é o cucumber, se encontra nos arquivos Cadastro.feature e Falha.feature
+
+## Pipeline
+    Esse projeto contem uma pipeline CI que pode ser executada dentro do Github na aba ( Actions )
+ 
