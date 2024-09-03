@@ -1,13 +1,41 @@
-name: End-to-end tests
-on: push
+name: Automacao
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: "Select the folder to run tests from"
+        required: true
+        default: "Cadastro"
+        type: choice
+        options:
+          - Cadastro
+          - Falha
+
 jobs:
   cypress-run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress Tests
+        run: npm run cypress:run -- --spec "cypress/integration/test/${{ github.event.inputs.folder }}/**/*.spec.js"
+        env:
+          CI: true
