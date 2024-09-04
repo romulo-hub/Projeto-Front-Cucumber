@@ -1,5 +1,5 @@
 # Começando:
-    Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local 
+    Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local. 
 
 
 # Pré-requisitos de instalação:
