@@ -36,5 +36,6 @@ jobs:
         run: npm install
 
       - name: Run Cypress Tests
-        run:  npm run cypress:run -- --headless --spec "cypress/integration/test/${{ github.event.inputs.folder }}/**/*.spec.js"
+        run: npm run cypress:run -- --spec "cypress/integration/${{ github.event.inputs.folder }}/**/*.{js,feature}"
+        env:
           CI: true
