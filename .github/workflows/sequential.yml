@@ -1,4 +1,4 @@
-name: Automacao
+name: Cypress Tests
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       folder:
-        description: "Select the folder to run tests from"
+        description: "Selecione a pasta para executar os testes"
         required: true
         default: "Cadastro"
         type: choice
@@ -36,6 +36,5 @@ jobs:
         run: npm install
 
       - name: Run Cypress Tests
-        run: npm run cypress:run -- --spec "cypress/integration/test/${{ github.event.inputs.folder }}/**/*.spec.js"
-        env:
+        run:  npm run cypress:run -- --headless --spec "cypress/integration/test/${{ github.event.inputs.folder }}/**/*.spec.js"
           CI: true
